@@ -1,0 +1,7 @@
+3. dia : Először a feladat elolvasása és értelmezése után a megadott kódot átmásoltam a fájlba.
+Ezután megadtam az email címhez és a jelszóhoz a változókat, valamint hogy léteznek-e a beírt címek és jelszavak.
+Megkértem a felhasználót, hogy adja meg az email-címét, majd a jelszavát egy-egy függvényben.
+Leellenőriztettem, hogy a beírt címek léteznek-e, és ezen információval beengedtük / nem engedtük be a felhasználót a rendszerbe.
+4. dia : Itt látható a teljes kód
+5. dia : A kódot kipróbáltam a helyes email-jelszó kombinációval, majd 7 jegyű jelszóval, és olyanokkal, ahol vagy nagybetű vagy szám nem szerepelt.
+ 
