@@ -28,4 +28,4 @@ def elemSzamBekeres() -> int:
         else:
             hiba("Számot adjon meg")
 #fopgrogram
-elemSzama = elemSzamBekeres()
+elemSzama = elemSzamBekeres() xd
