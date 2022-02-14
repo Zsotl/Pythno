@@ -11,7 +11,7 @@ halmaz: List[int] = []
 elemekSzama: int = None
 
 def hiba(text: str) -> None:
-    print(Text)
+    print(text)
     time.sleep(3)
     os.system("cls")
 
