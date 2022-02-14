@@ -27,5 +27,32 @@ def elemSzamBekeres() -> int:
                 hiba("1-nél nagyobb számot adjon meg!")
         else:
             hiba("Számot adjon meg")
+
+def listaFeltoltese(elemekSzama: int) -> List[int]:
+    eredmeny: List[int]=[]
+    for i in range(elemekSzama):
+        eredmeny.append(random.randint(-10, 10))
+        time.sleep(0.001)
+    return eredmeny
+
+def halmazKiirasa(kiirandoHalmaz: List[int]) -> None:
+    for item in kiirandoHalmaz:
+        print(f"{item}", end="\t")
+
+"""
+1. feladat:  Írassuk ki a tartalmát fordított sorrendben
+"""
+def halmazKiirasaForditva(kiirandoHalmaz: List[int]) -> None:
+    for i in range(len(kiirandoHalmaz)-1, -1, -1):
+        print(f"{kiirandoHalmaz[i]}", end="\t")
+    
+
 #fopgrogram
-elemSzama = elemSzamBekeres() xd
+elemekSzama = elemSzamBekeres() 
+halmaz = listaFeltoltese(elemekSzama)
+
+os.system("cls")
+print("A halmaz elemei: \n")
+halmazKiirasa(halmaz)
+print("\nA halmaz elemei fordítva: \n")
+halmazKiirasaForditva(halmaz)
