@@ -7,10 +7,16 @@ import random
 import time
 import os
 
+max: int = None
+min: int = None
 halmaz: List[int] = []
 elemekSzama: int = None
 osszeg: int = None
 ketJegyuSzamok: int = None
+egyjegyuSzamok: int = None
+paratlanSzamokOsszege: int = None
+nullaraVegzodoSzamokOsszege: int = None
+novekvoHalmaz: int = None
 
 def hiba(text: str) -> None:
     print(text)
@@ -62,9 +68,58 @@ def ketJegyuSzamokSzama(keresesHalmaza: List[int])-> int:
     eredmeny: int = 0
     for item in keresesHalmaza:
         if(abs(item) > 9 and abs(item) < 100):
-            eremdeny += 1
+            eredmeny += 1
 
     return eredmeny
+
+def egyjegyuSzamokSzama(kiirandoHalmaz: List[int])-> int:
+    eredmeny: int = 0
+    for item in kiirandoHalmaz:
+        if(abs(item) < 10):
+            print(f"{item}", end="\t")
+
+    return eredmeny
+
+def paratlanSzamokOsszege(keresesHalmaza: List[int])-> int:
+    eredmeny: int = 0
+    for item in keresesHalmaza:
+        if(item % 2 == 1):
+            eredmeny += item
+    return eredmeny
+
+def nullaraVegzodoSzamokSzama(keresesHalmaza: List[int]) -> int:
+    eredmeny: int = 0
+    for item in keresesHalmaza:
+        if(item % 10 == 0):
+            eredmeny += 1
+    return eredmeny
+
+def novekvoSorrend(keresesHalmaza: List[int]) -> List[int]:
+    temp: int = None
+    for i in range (0, len(keresesHalmaza), 1):
+        for j in range(i + 1, len(keresesHalmaza), 1):
+            if(keresesHalmaza[j] < keresesHalmaza[i]):
+                temp = keresesHalmaza[i]
+                keresesHalmaza[i] = keresesHalmaza[j]
+                keresesHalmaza[j] = temp
+
+    return keresesHalmaza
+
+def legnagyobbSzamKereses(keresesHalmaza: List[int]) -> List[int]:
+    max: int = keresesHalmaza[0]
+    for index in range (1, len(keresesHalmaza)):
+        if(keresesHalmaza[index] > max):
+            max = keresesHalmaza[index]
+    return max
+
+def legkisebbSzamIndexe(keresesHalmaza: List[int]) -> int:
+    index: int = 0
+    min: int = keresesHalmaza[index]
+    for i in range (1, len(keresesHalmaza)):
+        if(keresesHalmaza[i] < min):
+            min = keresesHalmaza[i]
+            index = i
+    return index
 
 #fopgrogram
 elemekSzama = elemSzamBekeres() 
@@ -104,3 +159,37 @@ parosSzamokKiirasa(halmaz)
 """
 ketJegyuSzamok = ketJegyuSzamokSzama(halmaz)
 print(f"\nA kétjegyű számok száma: {ketJegyuSzamok}")
+
+"""
+6. feladat: Írassuk ki az egyjegyű számokat
+"""
+print("\nA halmaz egyjegyű elemei: ")
+egyjegyuSzamokSzama(halmaz)
+
+"""
+7. feladat: Számítsuk ki a páratlan számok összegét
+"""
+paratlanSzamokOsszege = paratlanSzamokOsszege(halmaz)
+print(f"\nA halmaz páratlan számú elemeinek összege: {paratlanSzamokOsszege}")
+
+"""
+8. feladat: Számoljuk meg hány nullára végződő szám van a tömbben
+"""
+nullaraVegzodoSzamokOsszege = nullaraVegzodoSzamokSzama(halmaz)
+print(f"\nA halmazban {nullaraVegzodoSzamokOsszege} db nullára végződő szám van")
+"""
+9. feladat: Rakjuk sorba a listát növekvő/csökkenő sorrendbe
+
+novekvoHalmaz = novekvoSorrend(halmaz)
+print(f"\nA halmaz növekvő sorrendben: {novekvoHalmaz}")
+"""
+"""
+10. feladat: Keressük ki a legnagyobb számot
+"""
+max = legnagyobbSzamKereses(halmaz)
+print(f"\nA legnagyobb szám {max}")
+"""
+11. feladat: Keressük ki a legkisebb szám indexét
+"""
+min = legkisebbSzamIndexe(halmaz)
+print(f"\nA legkisebb szám {min}. helyen helyezkedik el")
