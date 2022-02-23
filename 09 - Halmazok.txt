@@ -18,6 +18,7 @@
 	Számoljuk ki a dobások átlagát
 	Számoljuk meg hány hatos dobás történt
 	Számoljuk meg hány dobás volt páratlan
+	Bónusz: Melyik számból volt a legtöbb?
 	
 4. Töltsünk fel egy listát [-100, 100 közt] a felhasználó által megadott elem számmal. E listából távolítsuk el a negatív előjelű elemeket. Ezen elemekből (eltávolítottak) készítsünk egy új listát.
 

@@ -5,6 +5,7 @@ halmaz: List[int] = []
 osszeg: int = None
 atlag: float = None
 elemSzam: int = random.randint(10,20)
+otszaznalNagyobb: int = None
 
 def randomSzamHalmazFeltoltese(elemSzam: int) -> List[int]:
     eredmeny: List[int] = [] 
@@ -26,8 +27,17 @@ def osszeadas(halmaz: List[int]) -> int:
         eredmeny += item
     return eredmeny
 
+def otszazFelettiSzamok(halmaz: List[int]) -> int:
+    eredmeny: int = 0
+    for item in halmaz:
+        if(item > 500):
+            eredmeny += 1
+    return eredmeny
+
 halmaz = randomSzamHalmazFeltoltese(elemSzam)
 kiiras(halmaz)
 osszeg = osszeadas(halmaz)
 print(f"\nA randomszámok összege: {osszeg}")
 print(f"\nA halmaz elemeinek átlaga: {osszeg / elemSzam}")
+otszaznalNagyobb = otszazFelettiSzamok(halmaz)
+print(f"\nA halmazban {otszaznalNagyobb} db ötszáznál nagyobb szám van")
