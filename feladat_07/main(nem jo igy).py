@@ -59,7 +59,11 @@ def novekvoSorrend(nagyHalmaz: List[int]) -> List[int]:
     return nagyHalmaz
 
 def halmazAtlaga(nagyHalmaz: List[int])-> float:
-    eredmeny: float = None
+    eredmeny: float = 0
+    for item in nagyHalmaz:
+        eredmeny += item
+    return eredmeny
+
     
 
 elemSzam1 = szamBekeres()
@@ -70,3 +74,5 @@ nagyHalmaz = halmaz1 + halmaz2
 print(f"A számok: {nagyHalmaz}")
 novekvoHalmaz = novekvoSorrend(nagyHalmaz)
 print(F"A számok növekő sorrendben: {novekvoHalmaz}")
+atlag = halmazAtlaga(nagyHalmaz) / len(nagyHalmaz)
+print(f"A számok átlaga: {atlag:1.1f}")
