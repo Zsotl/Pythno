@@ -38,3 +38,4 @@
 	Egy mondat szavait írjuk ki a szavak hossza szerint
 	Készítsen új tömböt mely az eredeti tömb pozitív számait tartalmazza
 
+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
